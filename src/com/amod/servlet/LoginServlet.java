@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -33,6 +36,24 @@ public class LoginServlet extends HttpServlet {
 
         System.out.println("Email: " + email + "\n");
         System.out.println("Password: " + password + "\n");
+
+//      DatabaseConnection.connect();
+        try {
+            Statement statement = DatabaseConnection.conn.createStatement();
+            String sql = "SELECT name, email FROM ntb_pramod.dealers";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()){
+            }
+
+            resultSet.close();
+            statement.close();
+        }
+        catch (SQLException | NullPointerException e){
+
+        }
+
+
+
 
 
     }

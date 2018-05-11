@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-6">
         <div class="jumbotron-fluid" style="text-align: center">
-            <h2>Hospital Management System</h2>
+            <h2>Login</h2>
             <p>Login</p>
         </div>
 
